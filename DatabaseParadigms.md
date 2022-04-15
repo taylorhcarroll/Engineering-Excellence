@@ -163,5 +163,25 @@ BEST FOR:
 Often used for fraud detection in finance, for building internal knowledge graphs, and power recc engines, like the one used for AirBnB.
 
 ## 6. Search Engines
+Elastisearch, Solr,(cloud-based options like) MeiliSearch & Algolia <br>
 
+Let's imagine you wanna build a search engine like google. A user provides a small amount of text, then your search engine needs to return the most relevant results, ranked in proper order from a huge amounts of data.
+
+![search](/images/search_engine.png)
+
+From a dev perspective, works very similar to a document oriented db. Start with an index, then add a bunch of data objects to it. The difference is under the hood, the search db will analyze all the text in the document then create an index of the searchable terms. So essentially, it works very simnilar to an index you would find in the back of a textbook.
+
+![index](/images/index.png)
+
+When a user performs a search, it only has to scan the index, rather than every document in the database. That makes it fast even with very large datasets.
+
+The db can run a variety of algorithims to rank those results, filter irrelevant hits, handle typos, and so on.
+
+This does add a lot of overhead and can be expensive to run at scale, but at the same time they can add a ton of value to the user experience if you're building something like a typeahead search box.
+
+BEST FOR:
+- Search engines
+- typeahead
+
+## 7. Multi-model Database
 
