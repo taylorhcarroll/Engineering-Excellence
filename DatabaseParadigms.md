@@ -102,7 +102,7 @@ INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID
 ```
 Probably most familar with this type as it is the most common, will do further documentation on another page with a cheatsheet of popular query joins, and maybe some stored procedure guides or common date stuff.
 
-![relatiional](/images/relational_db.png)
+![relational](/images/relational_db.png)
 
 The id of something in a table is a primary key.
 
@@ -113,5 +113,55 @@ Potential drawback, is it needs a schema and so you need to know the shape upfro
 **ACID**, meaning **A**tomicity, **C**onsistency, **I**solation,and **D**urability.
 
 means, whenever there's a transaction in the db, data validity is guranateed, even if there are network or hardware failures. Good for banks and other finanacial institutions, but harder to scale. Note: there are modern relational databases like CockroachDB which are designed to operate at scale.
-## 5. Graph QL
+
+BEST FOR: Most apps<br>
+NOT IDEAL FOR: unstructured data
+## 5. Graph Database
+Neo4J and DGraph
+
+So what if rather than modeling a relationship in a schema, we just treated the relationship itself as data.
+Enter, Graph QL.
+
+![graph](/images/graph_db.png)
+
+The data itself is represented as a **node**, and the relationships between them as **edges**.
+
+![relational-vs-graph](/images/relational_vs_graph.png)
+
+In a relational DB, we might have a join table to show the **many-to-many** relationship between depts and employees, and we do that by putting respective foreign keys in that join table.
+
+In a graph db, we don't need this middle man table, we define and **edge**, and connect that to the other record.
+
+We can now query this data in a statement that is much more concise and readable.
+
+SQL
+```
+SELECT name FROM Person
+LEFT JOIN Person_Department
+    ON Person.Id = Person_Department.PersonId
+LEFT JOIN Department
+    ON Department.Id = Person_Department.DepartmentId
+WHERE Department.name = "IT Department"
+```
+
+condenses down to:
+
+CYPHER (neo4j)
+```
+MATCH (p:Person)-[:WORKS_AT:]->(d:Dept)
+WHERE d.name = "IT Department"
+RETURN p.name
+```
+
+In addition, we can now achieve better performance, especially on larger datasets. Graph databases can be a great alternative to relational dbs, especially if you're running a lot of joins, and performance is taking a hit due to that.
+
+BEST FOR:
+- Graphs!
+- Knowledge Graphs
+- Reccomendation Engines
+
+Often used for fraud detection in finance, for building internal knowledge graphs, and power recc engines, like the one used for AirBnB.
+
+## 6. Search Engines
+
 
