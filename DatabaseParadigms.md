@@ -92,5 +92,26 @@ NOT IDEAL FOR:
 Data like this needs to be joined, and it's not easily done in a document DB at scale.
 
 ## 4. Relational Database
+MySQL, PostGres, and SQL Server
+Example query:
 
+```
+SELECT Orders.OrderID, Customers.CustomerName
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID
+```
+Probably most familar with this type as it is the most common, will do further documentation on another page with a cheatsheet of popular query joins, and maybe some stored procedure guides or common date stuff.
+
+![relatiional](/images/relational_db.png)
+
+The id of something in a table is a primary key.
+
+The "engine_id" or "prop_id" on the airplane table are foreign keys, because they refer to the primary key, from another table. We can join on the foregin keys to get more info from that particular part in other columns.
+
+Potential drawback, is it needs a schema and so you need to know the shape upfront of your data. That said, relational databases are **ACID** compliant.
+
+**ACID**, meaning **A**tomicity, **C**onsistency, **I**solation,and **D**urability.
+
+means, whenever there's a transaction in the db, data validity is guranateed, even if there are network or hardware failures. Good for banks and other finanacial institutions, but harder to scale. Note: there are modern relational databases like CockroachDB which are designed to operate at scale.
+## 5. Graph QL
 
