@@ -21,11 +21,11 @@ In the case of redis and memchached, all the data is held in the machines memory
 
 As opposed to other databases that keep their data on the disk. This limits the amount of data you can store, but makes the database extremely fast. It also does not perform queries or joins so you are limited in your datamodeling, but again super fast, like sub-milisecond fast.
 
-Apps like github use redis for real tile delivery of their data.
+Apps like github use redis for real time delivery of their data.
 
 Best for caching, pub/sub, leaderboards
 
-More often, key/value databases are used as a cached on top of more persistent data layer.
+More often, key/value databases are used as a cache to reduce data latency (you wouldn't want to use this as your main db) on top of more persistent data layer.
 ![memcache2](/images/memcache2.png)
 
 ## 2. Wide Column
@@ -84,7 +84,7 @@ BEST FOR:
 
 If unsure of how data is structured, document database is a great place to start.
 
-Wher they generally fall short is when you have a lot of disconnected but related data that is updated often, like a social app that has many users, that has many friends, who have many comments, who have many likes, and you wanna see comments that your friends like.
+Where they generally fall short is when you have a lot of disconnected but related data that is updated often, like a social app that has many users, that has many friends, who have many comments, who have many likes, and you wanna see comments that your friends like.
 
 NOT IDEAL FOR:
 - Graphs
@@ -120,7 +120,7 @@ NOT IDEAL FOR: unstructured data
 Neo4J and DGraph
 
 So what if rather than modeling a relationship in a schema, we just treated the relationship itself as data.
-Enter, Graph QL.
+Enter, Graph databases.
 
 ![graph](/images/graph_db.png)
 
@@ -163,9 +163,9 @@ BEST FOR:
 Often used for fraud detection in finance, for building internal knowledge graphs, and power recc engines, like the one used for AirBnB.
 
 ## 6. Search Engines
-Elastisearch, Solr,(cloud-based options like) MeiliSearch & Algolia <br>
+Elastisearch, Solr, or (cloud-based options like) MeiliSearch & Algolia <br>
 
-Let's imagine you wanna build a search engine like google. A user provides a small amount of text, then your search engine needs to return the most relevant results, ranked in proper order from a huge amounts of data.
+Let's imagine you wanna build a search engine like google. A user provides a small amount of text, then your database needs to return the most relevant results, ranked in proper order from a huge amounts of data.
 
 ![search](/images/search_engine.png)
 
@@ -184,4 +184,51 @@ BEST FOR:
 - typeahead
 
 ## 7. Multi-model Database
+FaunaDB
 
+![fauna](/images/fauna.png)
+
+If you're a front-end dev, you probably only care about the data you consume in the front-end application, you just want some JSON. You don't want to think about schemas, replication, or shards, or anything like that.
+
+With FaunaDB, you describe how you want to access your data using the GraphQL api.
+```
+type Query{
+    userWithPosts(id: Int): [User!]!
+}
+
+type User {
+    name: String!
+    id: Int!
+    posts: [Post!]!
+}
+
+type Post {
+    title: String!
+    author: User!
+}
+```
+In the above example, we have a *User* model and *Post* model, where a *User* can have **many** *Posts*.
+
+When you upload your GraphQL schema to Fauna, it automatically creates Collections where you can store data, and Index to query the data.
+
+Images below are sample data already provided by Fauna.
+
+![fauna-collection](/images/fauna_collection.png)
+
+![fauna-index](/images/fauna_index.png)
+
+Behind the scenes, it's figuring out how to take advantage of multiple db paradigms (graph, relational, document), and determining how best to use these paradigms based on the GraphQL pair you provided.
+
+You create data by adding documents to collections just like you would with a document database, but not stuck with the inherent limitations when it comes to data modeling. It's also ACID compliant, very fast, and you never have to worry about provisioning the actual infrastrcture. You just decided how you want to consume your data, and let Fauna figure out the rest. I suppose downside would be having to pay a monthly fee in perpetuity once you became a commercial business.
+
+BEST FOR:
+- Everything?
+
+## Honorable Mentions:
+
+### DataWareHouse
+Designed like a database, but optimized for centralizing the data for analytical purposes.
+
+TODO: add more here later.
+
+Time-Series
