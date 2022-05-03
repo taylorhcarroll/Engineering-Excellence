@@ -59,6 +59,7 @@ ie: records for IOT device, weather sensors, netflix history
 
 ## 3. Document Oriented Database
 MongoDB, FireStore, DynamoDB, CouchDB, etc
+<br>
 ![document DB](/images/document.png)
 
 Documents, where each document is a container for key-value pairs. **Unstructured**, and don't required a schema. Then documents are grouped together in collections.
