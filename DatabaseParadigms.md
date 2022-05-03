@@ -232,3 +232,33 @@ Designed like a database, but optimized for centralizing the data for analytical
 TODO: add more here later.
 
 Time-Series
+
+## BONUS
+
+### Sharding
+
+What is sharding? Sharding is a method of horizontal scaling where you split your database up across multiple servers via chunking the rows. For example. If you havew a db with 1000 rows, rows 1-550 will be on one server, and 501-1000 will be on the second and so forth.
+
+Advantages:
+- Multiple points of failures (if one server goes down not all your data is offline)
+- faster queries (you can query for one set of information twice as fast by going over both servers with less total indexes) search server1 & server2 in parallel
+- if sharding is ton intelligently, let's say you split them db by market (euro vs US dbs) you can automatically infer where to search and skip some shards to improve performance.
+Disadvantages:
+- Data or indexes are often only sharded one way, so that some searches are optimal, and others are slow or impossible.
+- A heavier reliance on the interconnection between servers
+- Increased latency when querying, especially where more than one shard must be searched.
+- Issues of consistency and durability due to the more complex failure modes of a set of servers, which often result in systems making no guarantees about cross-shard consistency or durability
+
+Implementations:
+- Azure SQL Database Elastic Database tools shards to scale out and in the data-tier of an application.[
+- MongoDB shards since version 1.6.
+- Elasticsearch enterprise search server shards
+- SQL Server, since SQL Server 2005 shards with help of 3rd party tools.
+
+CryptoSpace
+- blockchain platform like Etherum are adopting sharding because of issues with scaling blockhain. As the chain grows, so does more space required to store the public ledger on each user's machine.
+- location of each node is mapped to blockahin rather thasn the entire ledger
+- must guard against shard takeovers, corrupting nodes in a shard can lead to loss od data
+- Ethereum tackles this by randonmyl assigning a node a shard, then randomly re-assigning those nodes to other shards
+- 2nd challenge involves thin clients, aka siimplified verfication wallets, insuring that the clients have full picture of the ledger while its split into shards, to address this they connect to various networks and maintain local state copies for each shard
+- 3rd challange is intershard connection, is good for security but still poses challenge as each shard is technically it's own blockchain network
