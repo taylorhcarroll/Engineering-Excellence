@@ -32,6 +32,7 @@ More often, key/value databases are used as a cache to reduce data latency (you 
 HBASE, Cassandra
 
 ![wide-column](/images/wide-column.png)
+<br>
 Similar to a key/value db but you've essentially added another dimension to it.
 
 At the outer layer, you have a key space, which holds one or more column families, and each column family holds a set of ordered rows.
