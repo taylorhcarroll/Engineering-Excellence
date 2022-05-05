@@ -258,9 +258,9 @@ Implementations:
 - SQL Server, since SQL Server 2005 shards with help of 3rd party tools.
 
 CryptoSpace
-- blockchain platform like Etherum are adopting sharding because of issues with scaling blockhain. As the chain grows, so does more space required to store the public ledger on each user's machine.
+- blockchain platforms like Etherum are adopting sharding because of issues with scaling blockhain. As the chain grows, so does more space required to store the public ledger on each user's machine.
 - location of each node is mapped to blockahin rather thasn the entire ledger
 - must guard against shard takeovers, corrupting nodes in a shard can lead to loss od data
-- Ethereum tackles this by randonmyl assigning a node a shard, then randomly re-assigning those nodes to other shards
+- Ethereum tackles this by randomly assigning a node a shard, then randomly re-assigning those nodes to other shards
 - 2nd challenge involves thin clients, aka siimplified verfication wallets, insuring that the clients have full picture of the ledger while its split into shards, to address this they connect to various networks and maintain local state copies for each shard
 - 3rd challange is intershard connection, is good for security but still poses challenge as each shard is technically it's own blockchain network
