@@ -38,7 +38,7 @@ Whatever character that comes before the ? is considered "optional"
 ```/t../``` will match anything starting with t and the next two characters after it including spaces. so 'street' will match 'tre' or ' to ' will return 'to '
 PLEASE NOTE THE '.' WILL NOT CONTINUE ON TO NEW LINES.
 
-to find a '.' you can use ```/\./g``` the backslash will treat the '.' as a normal character
+to find a '.' you can use ```/\./g``` the backslash escape the character, meaning it will treat the '.' as a normal character
 
 ```/\w/g``` 'w'will match any word
 ```/\W/g``` CAPS W will match anything that's not a character
