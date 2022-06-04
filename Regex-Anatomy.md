@@ -223,7 +223,25 @@ This leaves us with two groups regarding the +1, so how can we omit the one we d
 ## How to Use Regex in JS
 
 ### Create Regular Expression
-Two ways to create regex in js. A litteral way is to set characters between two slashes
+Two ways to create regex in js. A litteral way is to set characters between two slashes <br>
 `const re = /foo/;` <br>
-or instantiate a RegExp
+or instantiate a RegExp <br>
 `const re = new RegExp(/foo/);` <br>
+
+### String RegEx Functions
+There are multiple ways to use reg expression on a string, such as:
+- match all occurences
+- search for existence of a pattern
+- replace mataches with a new value
+
+```
+const matches = 'aBC'.match(/[A-Z]/g);
+// Output: Array [B, C]
+
+const index = 'aBC'.search(/[A-Z]/);
+// Output: 1
+
+const next = 'aBC'.replace(/a/, 'A');
+// Output: ABC
+```
+
