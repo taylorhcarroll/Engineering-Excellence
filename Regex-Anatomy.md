@@ -187,13 +187,13 @@ This leaves us with two groups regarding the +1, so how can we omit the one we d
 ``` | ``` the logical OR operator
 
 ### Character Classes ⚔️
-`\w` word
-`\d` digit
-`\s` whitespace (tabs, line breaks)
+`\w` word <br>
+`\d` digit <br>
+`\s` whitespace (tabs, line breaks) <br?
 
-`\W` NOT word
-`\D` NOT digit
-`\S` NOT whitespace
+`\W` NOT word <br>
+`\D` NOT digit <br>
+`\S` NOT whitespace <br>
 
 `\t` tabs
 `\n` line breaks
