@@ -172,3 +172,16 @@ This leaves us with two groups regarding the +1, so how can we omit the one we d
 1234567890
 +11234567890
 ```
+
+
+## To Recap:
+
+### Basics:
+
+```/ expression / flags ``` ie ```/[A-Z]+/g ``` basic format
+```/ hello\?\*\\/ ``` escape special characters with backslashes
+``` () ``` to group with parentheses
+``` | ``` the logical OR operator
+
+### Character Classes
+`\w`
