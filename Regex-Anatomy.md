@@ -176,12 +176,37 @@ This leaves us with two groups regarding the +1, so how can we omit the one we d
 
 ## To Recap:
 
-### Basics:
+### Basics 💡
 
 ```/ expression / flags ``` ie ```/[A-Z]+/g ``` basic format
 ```/ hello\?\*\\/ ``` escape special characters with backslashes
 ``` () ``` to group with parentheses
 ``` | ``` the logical OR operator
 
-### Character Classes
-`\w`
+### Character Classes ⚔️
+`\w` word
+`\d` digit
+`\s` whitespace (tabs, line breaks)
+
+`\W` NOT word
+`\D` NOT digit
+`\S` NOT whitespace
+
+`\t` tabs
+`\n` line breaks
+`.` any character (except newline)
+
+### Brackets 🦕
+
+`[xyz]` match any x,y,z
+`[J-Z]` match any capital letters between J & Z
+`[^xyz]` NOT x,y, or z
+
+### Quantification 🧮
+
+`bob|alice` match bob or alice
+`z?` zero or one occurences
+`z*` zero or multiple occurences
+`z+` one or multiple occurences
+`z{n}` n occurences
+`z{min,max}` min/max occurences
