@@ -219,3 +219,7 @@ This leaves us with two groups regarding the +1, so how can we omit the one we d
 `hello world` exact match
 `^hello` start of the strings
 `world$` end of the string
+
+## How to Use Regex in JS
+
+### Create Regular Expression
