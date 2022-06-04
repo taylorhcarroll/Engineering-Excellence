@@ -213,3 +213,9 @@ This leaves us with two groups regarding the +1, so how can we omit the one we d
 `z+` one or multiple occurences <br>
 `z{n}` n occurences <br>
 `z{min,max}` min/max occurences <br>
+
+### Anchors ⚓
+
+`hello world` exact match
+`^hello` start of the strings
+`world$` end of the string
