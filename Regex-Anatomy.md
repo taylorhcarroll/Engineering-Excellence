@@ -245,3 +245,35 @@ const next = 'aBC'.replace(/a/, 'A');
 // Output: ABC
 ```
 
+### Common Examples
+
+#### Password Validation
+How do you validate the format of a password for signup? Force password to contain capital letter, lowercase letter, number, and min length of 8.
+
+```
+const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/g
+
+"1sMyPasswordOK?".search(re);
+
+```
+
+#### Hex Codes
+
+How do you find all hex codes such as CSS colors in a document?
+
+```
+const re = /#?([\da-fA-F]{2})([\da-fA-F]{2})([\da-fA-F]{2})/g
+
+"color: #ffffff; color: #000000;".match(re);
+
+```
+
+#### Remove all HTML tags
+
+How to remove all html tags from a doc? This will find and replace all html tags.
+
+```
+const re = /(<script(\s|\S)*?<\/script>)|(<style(\s|\S)*?<\/style>)|(<!--(\s|\S)*?-->)|(<\/?(\s|\S)*?>)/g
+
+const sanitized = "<h1>Hello World</h1>".replace(re, '');
+```
