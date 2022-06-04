@@ -195,21 +195,21 @@ This leaves us with two groups regarding the +1, so how can we omit the one we d
 `\D` NOT digit <br>
 `\S` NOT whitespace <br>
 
-`\t` tabs
-`\n` line breaks
-`.` any character (except newline)
+`\t` tabs <br>
+`\n` line breaks <br>
+`.` any character (except newline) <br>
 
 ### Brackets 🦕
 
-`[xyz]` match any x,y,z
-`[J-Z]` match any capital letters between J & Z
-`[^xyz]` NOT x,y, or z
+`[xyz]` match any x,y,z <br>
+`[J-Z]` match any capital letters between J & Z <br>
+`[^xyz]` NOT x,y, or z <br>
 
 ### Quantification 🧮
 
-`bob|alice` match bob or alice
-`z?` zero or one occurences
-`z*` zero or multiple occurences
-`z+` one or multiple occurences
-`z{n}` n occurences
-`z{min,max}` min/max occurences
+`bob|alice` match bob or alice <br>
+`z?` zero or one occurences <br>
+`z*` zero or multiple occurences <br>
+`z+` one or multiple occurences <br>
+`z{n}` n occurences <br>
+`z{min,max}` min/max occurences <br>
