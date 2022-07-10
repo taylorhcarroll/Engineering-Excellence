@@ -7,7 +7,10 @@ Oh hello you seemed to have stumbled upon my crib notes. I made a single reposit
 [Database Paradigms](DatabaseParadigms.md)
 
 ### Design Patterns
+#### Monads
 [Monad Design Pattern](Design-Patterns/Monads.md)
+<br>
+[Monad Options Design Pattern](Design-Patterns/Monads.md)
 ## MISC Notes
 --------------
 ### Regarding TypeScript
