@@ -10,7 +10,7 @@ Oh hello you seemed to have stumbled upon my crib notes. I made a single reposit
 #### Monads
 [Monad Design Pattern](Design-Patterns/Monads.md)
 <br>
-[Monad Options Design Pattern](Design-Patterns/Monads.md)
+[Monad Options Design Pattern](Design-Patterns/Monad_OptionsMonad.md)
 ## MISC Notes
 --------------
 ### Regarding TypeScript
