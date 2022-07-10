@@ -6,6 +6,8 @@ Oh hello you seemed to have stumbled upon my crib notes. I made a single reposit
 
 [Database Paradigms](DatabaseParadigms.md)
 
+### Design Patterns
+[Monad Design Pattern](Monads.md)
 ## MISC Notes
 --------------
 ### Regarding TypeScript
