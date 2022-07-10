@@ -9,7 +9,7 @@ Oh hello you seemed to have stumbled upon my crib notes. I made a single reposit
 ## MISC Notes
 --------------
 ### Regarding TypeScript
-Some sections will have example code written in TypeScript, to run typescript locally please install NodeJS.
+Some sections will have example code written in TypeScript, to run typescript locally please install NodeJS. <br>
 `npm install -g typescript`
 
 To create a new typescript file, create it with the file extension `example.ts`
