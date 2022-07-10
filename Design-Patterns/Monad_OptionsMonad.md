@@ -1,4 +1,4 @@
-# Option Monday 
+# Option Mondads
 ### (also known as a Maybe)
 
 - `number = a number`
