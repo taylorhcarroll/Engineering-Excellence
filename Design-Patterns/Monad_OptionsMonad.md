@@ -112,3 +112,25 @@ function getPetNickname(): Option<string> {
 ```
 
 #### Monads are a design pattern that allows **a user to chain operation** while *the monad manages secret work behind the scenes*.
+
+### With Missing Values via Option
+```
+function getPetNickname(): Option<string> {
+    const user: Option<User> = getCurrentUser()
+    const userPet: Option<Pet> = run(user, getPet)
+    const userPetNickname: Option<string> = run(userPet, getNickname)
+    return userPetNickname
+}
+```
+
+not much different between handling missing values and the abstracted away handling of missing values. Less if statements as well if you use the options monad.
+
+### Without Missing values
+```
+function getPetNickname(): Option<string> {
+    const user: User = getCurrentUser()
+    const userPet: Pet = run(user, getPet)
+    const userPetNickname: string = run(userPet, getNickname)
+    return userPetNickname
+}
+```
