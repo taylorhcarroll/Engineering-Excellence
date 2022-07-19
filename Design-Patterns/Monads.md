@@ -1,8 +1,8 @@
 # Monads
 
-// endofunctor - ?
+// endofunctor - a mapping of objects and morphisms from one Category back to the same Category
 
-// monoid - ?
+// monoid -  a set equipped with an associative binary operation and an identity element
 
 ### Starting Code:
 
