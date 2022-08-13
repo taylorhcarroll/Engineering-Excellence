@@ -44,15 +44,14 @@ function example(
     //this won't work
     //const supervisor = loadEmployeeById(alice.supervisorId)
     //so we try functorMap
-    const supervisor = alice.map(a => loadEmployeeById(a.supervisorId))
-    // with FunctorMap we are left with POINTLESS doublenested Option
+    //const supervisor = alice.map(a => loadEmployeeById(a.supervisorId))
+    // with FunctorMap we are left with doublenested Option
     // we have no use for Option<Option<Employee>> in this situation
     // we just want an Option<Emoployee>
     //so we use .flatMap, which FLATTENS unesscessary double nesting:
     const supervisor = alice.flatMap(a => loadEmployeeById(a.supervisorId))
+    console.log(supervisor)
 }
-
-
 
 // function run<T, U>(opt: Option<T>, func: (_: T) => U): Option<U> {
 //     if (opt.exists()) {
